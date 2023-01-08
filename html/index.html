@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <title>🧠 Memory Game</title>
+      <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+         <!-- nav bar -->
+         <nav class="navbar bg-light d-flex justify-content-center">
+            <div class="row text-center ">
+               <h1 class="display-1">Memory Game</h1>
+               <p class="font-weight-lighter">
+                  Click on the cards to flip them and find the matching pairs with as little flips as possible
+               </p>
+            </div>
+         </nav>
+      </header>
+      <main>
+         <!-- home screen -->
+         <div class="container text-center mt-3" id="homeScreen">
+            <form class="row">
+               <!-- base form -->
+               <div class=" container  col-9 col-md-7 col-lg-5 " ">
+                  <br>
+                  <label class="font-weight-bold" for="username">User name</label>
+                  <div class="input-group">
+                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                     <input aria-describedby="inputGroupPrepend2" class="form-control" id="username"
+                        placeholder="your name including letters and digits only">
+                  </div>
+                  <br>
+               </div>
+               <div class="container buttons">
+                  <button class="btn btn-primary" id="playButton" type="button">Play</button>
+                  <button aria-controls="settings" aria-expanded="false" class="btn btn-light" data-bs-target="#settings"
+                     data-bs-toggle="collapse" id="settingButton" type="button">Settings
+                  </button>
+                  <button aria-controls="highScore" aria-expanded="false" class="btn btn-light" data-bs-target="#highScore"
+                     data-bs-toggle="modal" id="highScoreButton" type="button">High score
+                  </button>
+                  <br>
+               </div>
+               <div class="containerForm">
+                  <div class="collapse row offset-2 offset-lg-0" id="settings">
+                     <div class="col-10 col-md-5 col-lg" id="rowsSelect">
+                        <label class="form-label" for="rows"> Number of rows</label>
+                        <select class="form-select" id="rows" required>
+                           <option value="2"> 2</option>
+                           <option value="3"> 3</option>
+                           <option value="4" selected> 4</option>
+                           <option value="5"> 5</option>
+                        </select>
+                     </div>
+                     <div class="col-10 col-md-5 col-lg" id="colsSelect">
+                        <label class="form-label" for="cols"> Number of cols</label>
+                        <select class="form-select" id="cols" required>
+                           <option value="2"> 2</option>
+                           <option value="3"> 3</option>
+                           <option value="4" selected> 4</option>
+                           <option value="5"> 5</option>
+                        </select>
+                     </div>
+                     <div class="col-10 col-md-5 col-lg offset-md-3 offset-lg-0">
+                        <br>
+                        <label class="form-label" for="delay"> delay (in seconds)</label>
+                        <input class="form-range" id="delay" max="2" min="0.5" oninput="this.nextElementSibling.value=this.value" step="0.5" type="range" value="1.5">
+                        <output>1.5</output>
+                     </div>
+                  </div>
+                  <!-- high score -->
+                  <div aria-hidden="true" aria-labelledby="staticBackdropLabel" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="highScore" tabindex="-1">
+                     <div class="modal-dialog">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Leaderboard</h1>
+                              <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button" id="modalBtn"></button>
+                           </div>
+                           <div class="modal-body" id="modalBody"></div>
+                           <div class="modal-footer">
+                              <button class="btn btn-secondary" data-bs-dismiss="modal" type="button" id="closeHighScore">Close</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+         <!-- game screen -->
+         <div class="container-fluid d-none text-center" id="gameScreen">
+            <div id="gameScreenHeader"></div>
+            <div id="gameScreenMain"></div>
+            <div id="gameScreenFooter">
+               <button class="btn btn-primary" id="returnToHomePage" type="button">Back</button>
+            </div>
+         </div>
+         <!-- score screen -->
+         <div class="container d-none text-center" id="scoresScreen">
+            <div id="scoresScreenHeader"></div>
+            <div id="scoresScreenMain"></div>
+            <div id="scoresScreenFooter">
+               <button class="btn btn-primary" id="scoreBtn" type="button">OK</button>
+            </div>
+         </div>
+      </main>
+      <footer></footer>
+      <script crossorigin="anonymous"
+         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../js/ex4.js"></script>
+   </body>
+</html>
